@@ -1,0 +1,12 @@
+#everything {
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: #00aee8;
+}

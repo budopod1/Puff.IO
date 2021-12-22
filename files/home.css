@@ -1,0 +1,128 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+html, body, #everything, #game, #loading {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+a {
+  color: #00aee8;
+}
+
+button {
+  padding: 0.5rem;
+  background-color: #12ccff;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+}
+
+input {
+  border: solid 1px black;
+  border-radius: 0px;
+  outline: none;
+  margin: 1px;
+}
+
+input:focus {
+  border-width: 2px;
+  margin: 0px;
+}
+
+#everything {
+  position: relative;
+}
+
+body, #everything, #game {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#signup, #message {
+  display: none;
+}
+
+.center {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+#puff-loading {
+  width: 30vh;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  animation: rotation 1.5s infinite linear;
+}
+
+#puff-loading img {
+  animation: rotation 1.5s infinite cubic-bezier(.46,.03,.52,.96);
+  animation-direction: reverse;
+  width: 10vh;
+  height: 10vh;
+}
+
+#game, #loading {
+  display: none;
+}
+
+#loading {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#account {
+  position: absolute;
+  top: 15vh;
+  left: 15vw;
+  right: 15vw;
+  bottom: 15vh;
+  padding: 1rem;
+  border: solid 1px black;
+  overflow-y: scroll;
+}
+
+.hidden {
+  display: none;
+}
+
+.mbu-3 {
+  margin-top: 1.5rem;
+}
+
+.mbu-2 {
+  margin-top: 1rem;
+}
+
+.mbu-1 {
+  margin-top: 0.5rem;
+}
+
+.mbd-3 {
+  margin-bottom: 1.5rem;
+}
+
+.mbd-2 {
+  margin-bottom: 1rem;
+}
+
+.mbd-1 {
+  margin-bottom: 0.5rem;
+}

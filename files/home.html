@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <title>Puff.IO</title>
+  <script>{}</script>
+  <style>{}</style>
+</head>
+<body>
+  <div id="everything">
+    <div id="account">
+      <h1>Puff.IO</h1>
+      <form id="signin" class="mbd-2">
+        <h2>Sign in</h2>
+        <div class="mbd-2">
+          <label for="signin-username">Username</label><br>
+          <input id="signin-username">
+        </div>
+        <div class="mbd-2">
+          <label for="signin-password">Password</label><br>
+          <input id="signin-password" type="password">
+        </div>
+        <a href="#account" id="signup-mode">I don't have an account</a><br>
+        <button class="mbu-2">Sign in</button>
+      </form>
+      <form id="signup" class="mbd-2">
+        <h2>Sign up</h2>
+        <div class="mbd-2">
+          <label for="signup-username">Username</label><br>
+          <input id="signup-username">
+        </div>
+        <div class="mbd-2">
+          <label for="signup-password">Password</label><br>
+          <input id="signup-password" type="password">
+        </div>
+        <a href="#account" id="signin-mode">I already have an account</a><br>
+        <button class="mbu-2">Sign up</button>
+      </form>
+      <div id="message" class="mbd-2">
+        <h2>Error</h2>
+        <pre id="messageContent" class="mbd-2"></pre>
+        <button class="home">Home</button>
+      </div>
+      <a href="/about">What data do we collect?</a>
+    </div>
+    <div id="game">
+      <canvas width="100" height="100" id="canvas"></canvas>
+    </div>
+    <div id="loading">
+      <div class="center">
+        <h1>Puff.IO</h1>
+      </div>
+      <div class="center">
+        <div id="puff-loading">
+          <img src="/assets/puff.png">
+          <img src="/assets/puff.png">
+        </div>
+      </div>
+      <div class="center">
+        <h2>Loading...</h2>
+      </div>
+    </div>
+    <div class="hidden">
+      <img id="grass"
+       src="/assets/grass.png"
+       width="100" height="100">
+      <img id="puff"
+       src="/assets/puff.png"
+       width="100" height="100">
+    </div>
+  </div>
+</body>
+</html>
