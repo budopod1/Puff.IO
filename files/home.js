@@ -34,7 +34,7 @@ var justDown = new Set();
 function posToScreen(x, y) {
   return [
     (x - camera["x"]) * scale + width / 2,
-    (-y - camera["y"]) * scale + height / 2
+    (camera["y"] - y) * scale + height / 2
   ];
 }
 
