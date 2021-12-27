@@ -24,7 +24,7 @@ def index():
 # Show the icon
 @app.route("/favicon.ico")
 def favicon():
-  with open("assets/puff-icon.ico", "rb") as file:
+  with open("static/puff-icon.ico", "rb") as file:
     return file.read()
 
 

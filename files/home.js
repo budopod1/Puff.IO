@@ -205,5 +205,5 @@ function error(messageContent) {
   message.style.display = "block";
   loading.style.display = "none";
 
-  document.getElementById("messageContent").innerHTML = messageContent;
+  document.getElementById("messageContent").innerText = messageContent;
 }
