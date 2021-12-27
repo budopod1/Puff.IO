@@ -11,15 +11,8 @@ with open("files/home.css") as file:
 with open("files/home.html") as file:
   home_html = file.read()
 
-# Load about page
-with open("files/about.html") as file:
-  about_html = file.read()
-with open("files/about.css") as file:
-  about_style = file.read()
-
 # Fromat the pages
 home_html = home_html.format(home_script, home_style)
-about_html = about_html.format(about_style)
 
 
 # Route the home page
@@ -28,16 +21,10 @@ def index():
   return home_html
 
 
-# Route the about page
-@app.route("/about")
-def about():
-  return about_html
-
-
-# Route all the assets
-@app.route('/assets/<path>')
-def files(path):
-  with open("assets/" + path, "rb") as file:
+# Show the icon
+@app.route("/favicon.ico")
+def favicon():
+  with open("assets/puff-icon.ico", "rb") as file:
     return file.read()
 
 
