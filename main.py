@@ -17,7 +17,7 @@ with open("files/home.html") as file:
 with open("assets/puff-icon.ico", "rb") as file:
   favicon_image = file.read()
 
-# Fromat the pages
+# Format the pages
 home_html = home_html.format(home_script, home_style)
 
 
