@@ -23,7 +23,7 @@ var tile_res = 100;
 
 var username = "";
 var password = "";
-var imageNames = ["grass", "puff"];
+var imageNames = ["grass", "puff", "leaves", "wood", "stone"];
 
 var images = {};
 
