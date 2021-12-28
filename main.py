@@ -1,7 +1,9 @@
 from flask import Flask
+from secrets import token_urlsafe
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret!'
+app.config['SECRET_KEY'] = token_urlsafe()
+app.static_folder = "assets"
 
 # Load home page
 with open("files/home.js") as file:
@@ -11,21 +13,24 @@ with open("files/home.css") as file:
 with open("files/home.html") as file:
   home_html = file.read()
 
+# Load the favicon
+with open("assets/puff-icon.ico", "rb") as file:
+  favicon_image = file.read()
+
 # Fromat the pages
 home_html = home_html.format(home_script, home_style)
 
 
 # Route the home page
 @app.route('/')
-def index():
+def home():
   return home_html
 
 
 # Show the icon
 @app.route("/favicon.ico")
 def favicon():
-  with open("static/puff-icon.ico", "rb") as file:
-    return file.read()
+  return favicon_image
 
 
 # Start the app
