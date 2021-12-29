@@ -64,7 +64,15 @@ function draw() {
     var size = imageData["size"];
     var imageSize = scale * size;
     var pos = posToScreen(imageData["x"], imageData["y"]);
-    ctx.drawImage(image, pos[0] - imageSize / 2, pos[1] - imageSize / 2, imageSize, imageSize);
+    var finalX = pos[0] - imageSize / 2;
+    var finalY = pos[1] - imageSize / 2;
+    if ((finalX > -imageSize && finalX < width * 2 + imageSize) &&
+        (finalX > -imageSize && finalX < height * 2 + imageSize)) {
+      ctx.drawImage(image, finalX, finalY, imageSize, imageSize);
+      // console.log("y");
+    } else {
+      // console.log("n");
+    }
   }
 }
 
