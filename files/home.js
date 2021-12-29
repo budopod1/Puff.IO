@@ -21,6 +21,9 @@ var loginMode = true;
 var noConnect = true;
 var tile_res = 100;
 
+var lastTick = 0;
+var timeDelta = 0;
+
 var username = "";
 var password = "";
 var imageNames = ["grass", "puff", "leaves", "wood", "stone"];
@@ -43,6 +46,8 @@ function draw() {
   if (!data) {
     return;
   }
+
+
 
   noConnect = false;
   
@@ -88,6 +93,11 @@ function background(color) {
 function frame() {
   // console.log(keysDown);
   // console.log(oldKeysDown);
+
+  // thisTick = new Date().getTime() / 1000;
+  // timeDelta = thisTick - lastTick;
+  // lastTick = thisTick;
+  // console.log(1 / timeDelta);
 
   socket.send(JSON.stringify({
     "username": username,
