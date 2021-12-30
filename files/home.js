@@ -71,8 +71,8 @@ function draw() {
     var pos = posToScreen(imageData["x"], imageData["y"]);
     var finalX = pos[0] - imageSize / 2;
     var finalY = pos[1] - imageSize / 2;
-    if ((finalX > -imageSize && finalX < width * 2 + imageSize) &&
-        (finalX > -imageSize && finalX < height * 2 + imageSize)) {
+    if ((finalX > -imageSize && finalX < width + imageSize) &&
+        (finalY > -imageSize && finalY < height + imageSize)) {
       ctx.drawImage(image, finalX, finalY, imageSize, imageSize);
       // console.log("y");
     } else {
@@ -94,10 +94,10 @@ function frame() {
   // console.log(keysDown);
   // console.log(oldKeysDown);
 
-  // thisTick = new Date().getTime() / 1000;
-  // timeDelta = thisTick - lastTick;
-  // lastTick = thisTick;
-  // console.log(1 / timeDelta);
+  thisTick = new Date().getTime() / 1000;
+  timeDelta = thisTick - lastTick;
+  lastTick = thisTick;
+  console.log(1 / timeDelta);
 
   socket.send(JSON.stringify({
     "username": username,
