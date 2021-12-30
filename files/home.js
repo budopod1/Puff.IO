@@ -47,8 +47,6 @@ function draw() {
     return;
   }
 
-
-
   noConnect = false;
   
   document.getElementById("game").style.display = "flex";
@@ -91,13 +89,14 @@ function background(color) {
 }
 
 function frame() {
-  // console.log(keysDown);
-  // console.log(oldKeysDown);
-
   thisTick = new Date().getTime() / 1000;
   timeDelta = thisTick - lastTick;
   lastTick = thisTick;
-  // console.log(1 / timeDelta);
+  /*
+  if (1 / timeDelta < 15) {
+    console.log(1 / timeDelta);
+  }
+  */
 
   socket.send(JSON.stringify({
     "username": username,
@@ -184,7 +183,9 @@ function start(connnectType) {
     var fromServer = JSON.parse(event.data);
     if (fromServer["type"] == "frame") {
       loginMode = false;
-      data = fromServer["data"];
+      if ("data" in fromServer) {
+        data = fromServer["data"];
+      }
       camera = fromServer["camera"];
     } else if (fromServer["type"] == "error") {
       error(fromServer["data"]);
