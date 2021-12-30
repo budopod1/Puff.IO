@@ -97,7 +97,7 @@ function frame() {
   thisTick = new Date().getTime() / 1000;
   timeDelta = thisTick - lastTick;
   lastTick = thisTick;
-  console.log(1 / timeDelta);
+  // console.log(1 / timeDelta);
 
   socket.send(JSON.stringify({
     "username": username,
